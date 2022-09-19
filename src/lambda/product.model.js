@@ -1,6 +1,6 @@
 // productModel.js
 import mongoose from 'mongoose'
-// Set schema do produto
+// Set Product Schema
 const schema = new mongoose.Schema({
         _id: mongoose.Schema.Types.ObjectId,
         name: {

@@ -1,31 +1,28 @@
-// productUpdate.js
+// productDelete.js
 import mongoose from 'mongoose'
 // Load the server
 import db from './server'
 // Load the Product Model
-import Product from './/produto.model'
+import Product from './productModel'
 exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
   
   try {
     // Parse the ID
-    const data = JSON.parse(JSON.parse(event.body)),
-          id = data.id,
-          product = data.product,
+    const id = JSON.parse(event.body),
           response = {
-            msg: "Product successfully updated",
-            data: product
+            msg: "Product successfully deleted"
           }
     
-    // Use Product.Model and id to update 
-    await Product.findOneAndUpdate({_id: id}, product)
+    // Use Product.Model to delete 
+    await Product.findOneAndDelete({ _id: id })
     
     return {
       statusCode: 201,
       body: JSON.stringify(response)
     }
   } catch(err) {
-    console.log('product.update', err) // output to netlify function log
+    console.log('product.delete', err) // output to netlify function log
     return {
       statusCode: 500,
       body: JSON.stringify({msg: err.message})
