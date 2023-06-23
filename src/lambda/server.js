@@ -1,6 +1,6 @@
 // server.js
 import mongoose from 'mongoose'
-import db from './server'
+//import db from './server'
 const dotenv = require("dotenv")
 dotenv.config()
 // Initialize connection to database

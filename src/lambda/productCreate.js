@@ -1,5 +1,4 @@
 // productCreate.js
-import mongoose from 'mongoose'
 // Load the server
 import db from './server'
 // Load the Product Model
@@ -11,7 +10,7 @@ exports.handler = async (event, context) => {
     const data = JSON.parse(event.body),
           name = data.name,
           price = parseInt(data.price),
-          id = mongoose.Types.ObjectId(),
+          id = db.Types.ObjectId(),
           product = {
             _id: id,
             name: name,

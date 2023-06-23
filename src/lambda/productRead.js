@@ -1,5 +1,4 @@
 // productRead.js
-import mongoose from 'mongoose'
 // Load the server
 import db from './server'
 // Load the Product Model
