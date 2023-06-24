@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
     const data = JSON.parse(event.body),
           name = data.name,
           price = parseInt(data.price),
-          id = db.Types.ObjectId(),
+          id = data.Types.ObjectId(),
           product = {
             _id: id,
             name: name,
